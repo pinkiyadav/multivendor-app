@@ -56,6 +56,23 @@ Admin can view orders via:
 
 Ensure vendor_id is present for all products to avoid checkout errors.
 
+### Screenshots
+
+#### Product Listing
+![Product Listing](public/screenshots/product-listing.png)
+
+#### Cart
+![Cart](public/screenshots/cart.png)
+
+#### Checkout
+![Checkout](public/screenshots/checkout.png)
+
+#### Admin Orders
+![Admin Orders](public/screenshots/admin-orders.png)
+
+
+
+
 1. Admin User
 
 You can create an admin user via Artisan Tinker:
@@ -131,17 +148,3 @@ class UsersTableSeeder extends Seeder
 Then run:
 
 php artisan db:seed --class=UsersTableSeeder
-
-### Screenshots
-
-#### Product Listing
-![Product Listing](public/screenshots/product-listing.png)
-
-#### Cart
-![Cart](public/screenshots/cart.png)
-
-#### Checkout
-![Checkout](public/screenshots/checkout.png)
-
-#### Admin Orders
-![Admin Orders](public/screenshots/admin-orders.png)
