@@ -1,0 +1,25 @@
+body {
+    background-color: white;
+    color: black;
+    font-family: Arial, sans-serif;
+}
+
+.dark-mode {
+    background-color: #1f2937;
+    color: #e5e7eb;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #f8f9fa;
+    padding: 1rem;
+}
+.dark-mode .navbar {
+    background-color: #111827;
+}
+
+/* Buttons */
+.btn {
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.25rem;
+}
