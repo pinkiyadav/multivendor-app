@@ -56,6 +56,82 @@ Admin can view orders via:
 
 Ensure vendor_id is present for all products to avoid checkout errors.
 
+1. Admin User
+
+You can create an admin user via Artisan Tinker:
+
+php artisan tinker
+
+Then run:
+
+use App\Models\User;
+
+User::create([
+    'name' => 'Admin User',
+    'email' => 'admin@example.com',
+    'password' => bcrypt('password123'), // default password
+    'role' => 'admin'
+]);
+
+Email: admin@example.com
+
+Password: password123
+
+Role must be admin to access the admin panel.
+
+2. Customer User
+User::create([
+    'name' => 'Test Customer',
+    'email' => 'customer@example.com',
+    'password' => bcrypt('password123'), // default password
+    'role' => 'customer'
+]);
+
+Email: customer@example.com
+
+Password: password123
+
+Role must be customer to access shopping features.
+
+3. Optional: Seeders
+
+You can also create a seeder to generate these users automatically:
+
+php artisan make:seeder UsersTableSeeder
+
+In database/seeders/UsersTableSeeder.php:
+
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use App\Models\User;
+
+class UsersTableSeeder extends Seeder
+{
+    public function run(): void
+    {
+        User::create([
+            'name' => 'Admin User',
+            'email' => 'admin@example.com',
+            'password' => bcrypt('password123'),
+            'role' => 'admin'
+        ]);
+
+        User::create([
+            'name' => 'Test Customer',
+            'email' => 'customer@example.com',
+            'password' => bcrypt('password123'),
+            'role' => 'customer'
+        ]);
+    }
+}
+
+Then run:
+
+php artisan db:seed --class=UsersTableSeeder
+
 ### Screenshots
 
 #### Product Listing
